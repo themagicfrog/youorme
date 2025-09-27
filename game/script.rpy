@@ -84,7 +84,7 @@ label start:
 
         "Time to start over..."
 
-        return
+        jump start 
     
     label matcha: 
         
@@ -190,7 +190,7 @@ label start:
 
             m "Time to try again..."
 
-            return
+            jump nope
 
         label choice:
 
@@ -223,6 +223,14 @@ label start:
                 "No, I need to go see my dad." :
                     jump dad
 
+            label dad:
+                show felix oangry at fit_screen
+                f "You are such a bad person!"
+
+                m "Time to try again..."
+
+                jump choice
+
             label dying: 
 
                 hide felix ohappy
@@ -239,13 +247,61 @@ label start:
 
                 m "..."
 
+                scene bg cafe at smaller
+                
+                show felix ohappy at right_side
+                f "Oh no! To lift your spirits, why don't you light this candle on my cupcake for me? It's my birthday today."
+
+                show unlit cupcake at left_side
+                show felix chappy at right_side
+                m "This cafe is wooden, I don't think they'll allow it."
+
+                show felix ohappy at right_side
+                f "It'll be alright. Here's the cupcake, and here's a match."
+
+                show felix chappy at right_side
+                show lit cupcake at left_side
+                m "*takes match and lights candle*"
+
+                show felix ohappy at right_side
+                f "Woah!"
+
+                menu :
+                    "Throw lit cupcake on the floor.":
+                        jump fire
+                    "Throw lit cupcake on the floor.":
+                        jump fire
+                    "Throw lit cupcake on the floor.":
+                        jump fire
+                    "Throw lit cupcake on the floor.":
+                        jump fire
+                    "Throw lit cupcake on the floor.":
+                        jump fire
+                    "Throw lit cupcake on the floor.":
+                        jump fire
+                    "Throw lit cupcake on the floor.":
+                        jump fire
+                    "Throw lit cupcake on the floor.":
+                        jump fire
+                    "Throw lit cupcake on the floor.":
+                        jump fire
+                    "Throw lit cupcake on the floor.":
+                        jump fire
+                    "Throw lit cupcake on the floor.":
+                        jump fire
+                    "Throw lit cupcake on the floor.":
+                        jump fire
+            
+            label fire: 
+                show felix scared at fit_screen
+                scene bg fire small at smaller
+                pause 3.0
+                scene bg fire medium at smaller
+                pause 3.0
+                scene bg fire big at smaller
+                pause 10.0
                 return
 
-            label dad:
-                show felix oangry at fit_screen
-                f "You are such a bad person."
-
-                m "Time to try again..."
 
             
             
