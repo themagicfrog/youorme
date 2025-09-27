@@ -102,7 +102,6 @@ label start:
         d "*dies from starvation*"
 
         hide fluffy dead
-        scene bg cafe at smaller
         show felix ohappy at fit_screen
 
         f "I know a great matcha place not far from here, come with me."
@@ -110,6 +109,7 @@ label start:
         m "Okay! Let's go..."
 
         show felix chappy at fit_screen
+        scene bg cafe at smaller
 
         m "Look! We've arrived. Wow, I'm so thirsty."
 
@@ -138,7 +138,8 @@ label start:
             m "Yeah... no problem...  (getting fatigued...) I only have enough money for 1 drink though,"
 
             hide felix ohappy
-            show money at fit_screen
+            show felix ohappy at right_side
+            show money at left_side
             "You can have it."
 
             hide money
